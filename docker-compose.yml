@@ -1,0 +1,17 @@
+# Defines the services that make up your application.
+services:
+  # 'app' is the name of our service.
+  app:
+    # Build the Docker image from the Dockerfile in the current directory ('.').
+    build: .
+    # Assign a custom name to the container for easier identification.
+    container_name: api
+    # Map ports from the host machine to the container.
+    ports:
+      # Map port 8000 on the host to port 8000 on the container.
+      - "8000:8000"
+    # Mount host paths or named volumes into the container.
+    volumes:
+      # Mount the current directory on the host to '/app' in the container.
+      # This is useful for development as code changes are reflected live.
+      - .:/app
